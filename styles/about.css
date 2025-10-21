@@ -1,0 +1,105 @@
+@import "./variables.css";
+
+/* --- Kontener About --- */
+#about-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5rem;
+  gap: 2rem;
+  padding: 1rem 1rem;
+  /* box-shadow: var(--shadow);
+  background-color: rgb(252, 252, 252);
+  border-radius: 12px; */
+}
+
+/* Nagłówek nad sekcją */
+#about-container h3 {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  color: var(--color-accent);
+  background: linear-gradient(45deg, var(--color-accent), var(--color-red));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* --- Sekcja About --- */
+#about {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 90%;
+}
+
+#about #image {
+  flex: 1 1 400px;
+  order: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 250px;
+}
+
+#about #image img {
+  width: 90%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 0 18px 15px var(--color-muted);
+  object-fit: cover;
+}
+
+#about #description {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1 1 100px;
+  height: 700px;
+  color: rgb(70, 67, 67);
+  font-weight: bold;
+  font-family: monospace;
+  line-height: 2.5rem;
+  font-size: clamp(1.2rem, 1.5vw, 1.5rem);
+  text-align: justify;
+}
+
+#about #description p {
+  margin: 0.8rem 0;
+}
+
+/* --- Responsywność --- */
+@media (max-width: 1024px) {
+  #about {
+    flex-direction: column-reverse;
+    gap: 2rem;
+  }
+
+  #about #description {
+    text-align: justify;
+  }
+}
+
+@media (max-width: 768px) {
+  #about #image {
+    flex: 1 1 40%;
+  }
+
+  #about #description {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #about #image img {
+    max-width: 80%;
+  }
+
+  #about #description {
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+}

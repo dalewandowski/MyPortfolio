@@ -1,0 +1,10 @@
+:root {
+  --color-bg: #fefefe;
+  --color-primary: #e6edf3;
+  --color-accent: #00aaff;
+  --color-muted: #8b949e;
+
+  --color-red: #d63c3c; /* dopasowany czerwony */
+  --shadow: 1px 1px 15px rgb(97, 94, 94);
+  --font-code: "Inter", sans-serif;
+}

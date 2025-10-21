@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tryITdev</title>
+    <!-- fonts -->
+    <!-- Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- styles -->
+    <link rel="stylesheet" href="./styles/menu.css" />
+    <link rel="stylesheet" href="./styles/main-style.css" />
+    <link rel="stylesheet" href="./styles/about.css" />
+    <link rel="stylesheet" href="./styles/skills.css" />
+  </head>
+  <body>
+    <header id="main-menu">
+      <a href="#home">
+        <h1 class="logo">
+          <span>try</span>
+          <span class="brackets">{}</span>
+          <span class="info">ITdev</span>
+        </h1>
+      </a>
+
+      <button id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav>
+        <ul id="menu">
+          <li class="option-menu"><a href="#home">Strona Głowna</a></li>
+          <li class="option-menu"><a href="#about">O mnie</a></li>
+          <li class="option-menu"><a href="#skills">Umiejętności</a></li>
+          <li class="option-menu"><a href="#projeccts">Projekty</a></li>
+          <li class="option-menu"><a href="#offer">Oferta</a></li>
+          <li class="option-menu"><a href="#contact">Kontakt</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section id="home" class="short-info-container">
+        <h2 id="intro-text">Cześć! Jestem, <span>Damian</span></h2>
+        <span id="job-title"
+          >Frontend Developer | Web Developer | Aspiring Full-Stack Developer
+        </span>
+        <button id="info-btn">
+          <a href="#offer">Zobacz Ofertę &#8702;</a>
+        </button>
+      </section>
+
+      <section id="photo-container">
+        <img
+          id="profile-pictrue"
+          src="./images/damian-lewandowski.jpg"
+          alt="Damian Lewandowski"
+        />
+      </section>
+
+      <section id="about-container">
+        <h3>Kim jestem i co robię?</h3>
+        <section id="about">
+          <div id="image">
+            <img src="./images/about-me.png" alt="O mnie" />
+          </div>
+          <div id="description">
+            <p>
+              Jestem samoukiem front-endowcem. Tworzę strony i aplikacje, które
+              działają szybko, przejrzyście i efektywnie. Dbam o SEO, szybkie
+              ładowanie i przemyślany design, łącząc logikę z kreatywnością. Na
+              co dzień pracuję w HTML, CSS, JavaScript i React, a w wolnym
+              czasie rozwijam swoje umiejętności w Pythonie i Node.js, aby
+              podnosić poziom swoich projektów. Chcesz mieć stronę, portfolio
+              lub aplikację, która naprawdę działa? Skontaktuj się ze mną –
+              wspólnie stworzymy coś wyjątkowego.
+            </p>
+          </div>
+        </section>
+      </section>
+      <hr />
+      <div id="skills-container">
+        <h4>Mój Stack Technologiczny</h4>
+        <section id="skills">
+          <article class="skills-article">
+            <img src="./images/html-5.png" alt="HTML5" />
+            <h6>HTML 5</h6>
+          </article>
+          <article class="skills-article">
+            <img src="./images/css.png" alt="CSS" />
+            <h6>CSS</h6>
+          </article>
+          <article class="skills-article">
+            <img src="./images/java-script.png" alt="JavaScript" />
+            <h6>JavaScript</h6>
+          </article>
+          <article class="skills-article">
+            <img src="./images/bootstrap.png" alt="Bootstrap" />
+            <h6>Bootstrap</h6>
+          </article>
+          <article class="skills-article">
+            <img src="./images/react.png" alt="ReactJS" />
+            <h6>React JS</h6>
+          </article>
+        </section>
+      </div>
+    </main>
+
+    <script src="./scripts/script.js"></script>
+  </body>
+</html>

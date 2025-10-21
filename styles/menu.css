@@ -1,0 +1,171 @@
+@import "./variables.css";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+/*  Body */
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 100vh;
+  background: var(--color-bg);
+  font-family: var(--font-code);
+  overflow-x: hidden;
+}
+
+/* Main Menu  */
+#main-menu {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100vw;
+  padding: 10px 2rem;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+
+  /* Liquid Glass */
+  background: rgba(255, 255, 255, 0.2); /* półprzezroczyste tło */
+  backdrop-filter: blur(50px); /* rozmycie tła */
+  -webkit-backdrop-filter: blur(10px); /* Safari */
+  border-radius: 0 0 15px 15px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+#main-menu a {
+  text-decoration: none;
+  font-size: 2rem;
+  color: var(--color-red);
+}
+
+/*  Logo Container */
+.logo {
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* Logo Elements */
+.logo .try {
+  color: var(--color-red);
+}
+
+.logo .brackets {
+  color: var(--color-muted);
+  text-shadow: 0 0 8px rgba(170, 170, 170, 0.7);
+  transition: transform 0.2s ease-in-out;
+}
+
+.logo .info {
+  color: var(--color-accent);
+  font-size: 2rem;
+}
+
+/* 🔹 Efekt hover */
+.logo:hover .brackets {
+  transform: scale(1.1);
+}
+
+/* Navbar */
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+#menu {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+}
+
+#menu li a {
+  margin: 20px;
+  font-size: 1.3rem;
+  color: var(--color-red);
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+#menu li {
+  transition: all 0.3s ease;
+}
+
+#menu a:hover {
+  color: var(--color-accent);
+}
+#menu li:hover {
+  transform: translateY(-4px);
+  color: var(--color-hover);
+}
+
+#hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 22px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 20;
+}
+
+#hamburger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: var(--color-accent);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 960px) {
+  #main-menu {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+  }
+
+  .logo {
+    margin-bottom: 0.5rem;
+  }
+
+  #hamburger {
+    display: flex;
+  }
+
+  #menu {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 10px;
+    flex-direction: column;
+    width: 100%;
+    padding: 1rem;
+    display: none;
+  }
+
+  #menu.show {
+    display: flex;
+  }
+
+  #menu li {
+    margin: 10px 0;
+  }
+}
