@@ -3,117 +3,324 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>tryITdev</title>
-    <!-- fonts -->
-    <!-- Inter -->
+
+    <!-- Title -->
+    <title>Damian Lewandowski – tryIt</title>
+
+    <!-- Meta Description -->
+    <meta
+      name="description"
+      content="Jestem Damian Lewandowski, frontend developer i web developer. Tworzę nowoczesne, responsywne i zoptymalizowane strony internetowe oraz aplikacje webowe."
+    />
+
+    <!-- Meta Keywords (opcjonalne, małe znaczenie teraz) -->
+    <meta
+      name="keywords"
+      content="frontend developer, web developer, HTML, CSS, JavaScript, React, portfolio, Damian Lewandowski"
+    />
+
+    <!-- Author -->
+    <meta name="author" content="Damian Lewandowski" />
+
+    <!-- Robots (dla wyszukiwarek) -->
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph / Social Media -->
+    <meta
+      property="og:title"
+      content="Damian Lewandowski – Frontend Developer | Web Developer"
+    />
+    <meta
+      property="og:description"
+      content="Jestem Damian Lewandowski, frontend developer i web developer. Tworzę nowoczesne, responsywne i zoptymalizowane strony internetowe oraz aplikacje webowe."
+    />
+    <meta property="og:image" content="./images/profile-og.png" />
+    <!-- obrazek podglądowy w social media -->
+    <meta property="og:url" content="https://twojastrona.pl" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Damian Lewandowski – Frontend Developer | Web Developer"
+    />
+    <meta
+      name="twitter:description"
+      content="Jestem Damian Lewandowski, frontend developer i web developer. Tworzę nowoczesne, responsywne i zoptymalizowane strony internetowe oraz aplikacje webowe."
+    />
+    <meta name="twitter:image" content="./images/profile-og.png" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="./images/favicon.ico" type="image/x-icon" />
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap"
       rel="stylesheet"
     />
 
-    <!-- styles -->
-    <link rel="stylesheet" href="./styles/menu.css" />
-    <link rel="stylesheet" href="./styles/main-style.css" />
-    <link rel="stylesheet" href="./styles/about.css" />
-    <link rel="stylesheet" href="./styles/skills.css" />
+    <!-- Styles -->
+    <link rel="stylesheet" href="./styles/variables.css" />
   </head>
+
   <body>
-    <header id="main-menu">
-      <a href="#home">
-        <h1 class="logo">
-          <span>try</span>
-          <span class="brackets">{}</span>
-          <span class="info">ITdev</span>
+    <!-- HEADER -->
+    <header id="main-menu" class="animate-on-scroll animate-down">
+      <a href="#home" class="logo">
+        <h1>
+          <span class="try">try</span><span class="brackets">{}</span
+          ><span class="info">ITdev</span>
         </h1>
       </a>
-
-      <button id="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
       <nav>
         <ul id="menu">
-          <li class="option-menu"><a href="#home">Strona Głowna</a></li>
-          <li class="option-menu"><a href="#about">O mnie</a></li>
-          <li class="option-menu"><a href="#skills">Umiejętności</a></li>
-          <li class="option-menu"><a href="#projeccts">Projekty</a></li>
-          <li class="option-menu"><a href="#offer">Oferta</a></li>
-          <li class="option-menu"><a href="#contact">Kontakt</a></li>
+          <li><a href="#home">Strona Główna</a></li>
+          <li><a href="#about-container">O mnie</a></li>
+          <li><a href="#skills-container">Umiejętności</a></li>
+          <!-- <li><a href="#projects-container">Projekty</a></li> -->
+          <li><a href="#offer-container">Oferta</a></li>
+          <li><a href="#contact-container">Kontakt</a></li>
         </ul>
       </nav>
+      <button id="hamburger"><span></span><span></span><span></span></button>
     </header>
 
     <main id="main-content">
-      <section id="home" class="short-info-container">
-        <h2 id="intro-text">Cześć! Jestem, <span>Damian</span></h2>
-        <span id="job-title"
-          >Frontend Developer | Web Developer | Aspiring Full-Stack Developer
+      <!-- HOME -->
+      <section
+        id="home"
+        class="short-info-container animate-on-scroll animate-fade"
+      >
+        <h2 id="intro-text">Cześć! Jestem <span>Damian</span></h2>
+        <span id="job-title">
+          Frontend Developer | Web Developer | Aspiring Full-Stack Developer
         </span>
-        <button id="info-btn">
-          <a href="#offer">Zobacz Ofertę &#8702;</a>
+        <button id="info-btn" class="animate-on-scroll animate-up">
+          <a href="#offer-container">Zobacz Ofertę &#8702;</a>
         </button>
       </section>
 
-      <section id="photo-container">
+      <!-- PHOTO -->
+      <section id="photo-container" class="animate-on-scroll animate-right">
         <img
-          id="profile-pictrue"
+          id="profile-picture"
           src="./images/damian-lewandowski.jpg"
           alt="Damian Lewandowski"
         />
       </section>
 
-      <section id="about-container">
+      <!-- ABOUT -->
+      <section id="about-container" class="animate-on-scroll animate-left">
         <h3>Kim jestem i co robię?</h3>
-        <section id="about">
-          <div id="image">
+        <div id="about">
+          <div id="image" class="animate-on-scroll animate-right">
             <img src="./images/about-me.png" alt="O mnie" />
           </div>
-          <div id="description">
+          <div id="description" class="animate-on-scroll animate-left">
             <p>
-              Jestem samoukiem front-endowcem. Tworzę strony i aplikacje, które
-              działają szybko, przejrzyście i efektywnie. Dbam o SEO, szybkie
-              ładowanie i przemyślany design, łącząc logikę z kreatywnością. Na
-              co dzień pracuję w HTML, CSS, JavaScript i React, a w wolnym
-              czasie rozwijam swoje umiejętności w Pythonie i Node.js, aby
-              podnosić poziom swoich projektów. Chcesz mieć stronę, portfolio
-              lub aplikację, która naprawdę działa? Skontaktuj się ze mną –
-              wspólnie stworzymy coś wyjątkowego.
+              Jestem samoukiem <mark>front-endowcem.</mark> Tworzę strony i
+              aplikacje, które działają szybko, przejrzyście i efektywnie. Dbam
+              o <b>SEO</b>, szybkie ładowanie i przemyślany design, łącząc
+              logikę z kreatywnością. Na co dzień pracuję w
+              <b>HTML, CSS, JavaScript i React</b>, a w wolnym czasie rozwijam
+              swoje umiejętności w Pythonie i Node.js. Chcesz mieć stronę lub
+              aplikację, która naprawdę działa?
+              <mark
+                ><b
+                  >Skontaktuj się ze mną – wspólnie stworzymy coś
+                  wyjątkowego.</b
+                ></mark
+              >
             </p>
           </div>
-        </section>
+        </div>
       </section>
-      <hr />
-      <div id="skills-container">
-        <h4>Mój Stack Technologiczny</h4>
-        <section id="skills">
-          <article class="skills-article">
+
+      <!-- SKILLS -->
+      <section id="skills-container" class="animate-on-scroll animate-fade">
+        <h4>Technologie z którymi pracuję</h4>
+        <div id="skills">
+          <article class="skills-article animate-on-scroll animate-left">
             <img src="./images/html-5.png" alt="HTML5" />
             <h6>HTML 5</h6>
           </article>
-          <article class="skills-article">
+          <article class="skills-article animate-on-scroll animate-right">
             <img src="./images/css.png" alt="CSS" />
             <h6>CSS</h6>
           </article>
-          <article class="skills-article">
+          <article class="skills-article animate-on-scroll animate-left">
             <img src="./images/java-script.png" alt="JavaScript" />
             <h6>JavaScript</h6>
           </article>
-          <article class="skills-article">
+          <article class="skills-article animate-on-scroll animate-right">
             <img src="./images/bootstrap.png" alt="Bootstrap" />
             <h6>Bootstrap</h6>
           </article>
-          <article class="skills-article">
+          <article class="skills-article animate-on-scroll animate-left">
             <img src="./images/react.png" alt="ReactJS" />
             <h6>React JS</h6>
           </article>
-        </section>
-      </div>
+        </div>
+
+        <div id="skills-progress" class="animate-on-scroll animate-up">
+          <h4>In Progress:</h4>
+          <div class="skill-bar">
+            <span>WordPress + WooCommerce</span>
+            <div class="progress">
+              <div class="progress-fill" style="width: 20%"></div>
+            </div>
+          </div>
+          <div class="skill-bar">
+            <span>Python</span>
+            <div class="progress">
+              <div class="progress-fill" style="width: 40%"></div>
+            </div>
+          </div>
+          <div class="skill-bar">
+            <span>Node.js</span>
+            <div class="progress">
+              <div class="progress-fill" style="width: 50%"></div>
+            </div>
+          </div>
+          <div class="skill-bar">
+            <span>Docker</span>
+            <div class="progress">
+              <div class="progress-fill" style="width: 15%"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- OFFER -->
+      <section id="offer-container" class="animate-on-scroll animate-fade">
+        <h4>Oferta</h4>
+        <div id="offer">
+          <article class="offer-article animate-on-scroll animate-left">
+            <h5>Tworzenie stron internetowych</h5>
+            <p>
+              Responsywne, nowoczesne strony internetowe od podstaw,
+              zoptymalizowane i przyjazne użytkownikowi.
+            </p>
+          </article>
+          <article class="offer-article animate-on-scroll animate-up">
+            <h5>Edycja i poprawa wyglądu strony</h5>
+            <p>
+              Poprawa designu, układu i estetyki istniejących stron, dopasowanie
+              do potrzeb klienta.
+            </p>
+          </article>
+          <article class="offer-article animate-on-scroll animate-right">
+            <h5>Prosta aplikacja webowa</h5>
+            <p>
+              Tworzenie prostych aplikacji webowych, interaktywnych funkcji i
+              dynamicznych elementów.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact-container" class="animate-on-scroll animate-fade">
+        <h4>Kontakt</h4>
+
+        <div id="contact-main-cards">
+          <!-- Email -->
+          <div class="contact-card animate-on-scroll animate-up">
+            <img
+              src="./images/email-icon.png"
+              alt="Email"
+              class="contact-icon"
+            />
+            <h5>Email</h5>
+            <p><a href="mailto:damian@example.com">damian@example.com</a></p>
+          </div>
+
+          <!-- Telefon -->
+          <div
+            class="contact-card animate-on-scroll animate-up contact-highlight"
+          >
+            <span class="badge">Najszybszy Kontakt</span>
+            <img
+              src="./images/phone-icon.png"
+              alt="Telefon"
+              class="contact-icon"
+            />
+            <h5>Telefon</h5>
+            <p><a href="tel:+48721451179">+48 721 451 179</a></p>
+          </div>
+
+          <!-- WhatsApp -->
+          <div class="contact-card animate-on-scroll animate-up">
+            <img
+              src="./images/whatsapp-icon.png"
+              alt="WhatsApp"
+              class="contact-icon"
+            />
+            <h5>WhatsApp</h5>
+            <p>
+              <a href="https://wa.me/48721451179" target="_blank"
+                >Napisz do mnie</a
+              >
+            </p>
+          </div>
+        </div>
+
+        <!-- Media społecznościowe -->
+        <div id="contact-social-links" class="animate-on-scroll animate-up">
+          <a href="https://github.com/dalewandowski" target="_blank">
+            <img
+              src="./images/github-icon.png"
+              alt="GitHub"
+              class="social-icon"
+            />
+          </a>
+          <a href="https://www.instagram.com/damianjestem._/" target="_blank">
+            <img
+              src="./images/instagram-icon.png"
+              alt="Instagram"
+              class="social-icon"
+            />
+          </a>
+          <a
+            href="https://www.facebook.com/damian.lewandowski.568"
+            target="_blank"
+          >
+            <img
+              src="./images/facebook-icon.png"
+              alt="Facebook"
+              class="social-icon"
+            />
+          </a>
+        </div>
+      </section>
+
+      <!-- PROJEKTY (pusta sekcja, jeśli kiedyś chcesz dodać) -->
+      <section
+        id="projects-container"
+        class="animate-on-scroll animate-fade"
+      ></section>
     </main>
 
+    <!-- FOOTER -->
+    <footer id="footer">
+      <div class="footer-content">
+        <p>&copy; 2025 Damian Lewandowski. Wszelkie prawa zastrzeżone.</p>
+        <div class="social-links">
+          <a href="https://github.com/dalewandowski" target="_blank">GitHub</a>
+          <a href="https://www.instagram.com/damianjestem._/" target="_blank"
+            >LinkedIn</a
+          >
+          <a
+            href="https://www.facebook.com/damian.lewandowski.568"
+            target="_blank"
+            >Facebook</a
+          >
+        </div>
+      </div>
+    </footer>
     <script src="./scripts/script.js"></script>
   </body>
 </html>
