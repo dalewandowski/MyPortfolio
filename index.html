@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="canonical" href="https://tryitdev.pl/" />
 
     <!-- Title -->
     <title>Damian Lewandowski – tryIt</title>
@@ -10,10 +11,10 @@
     <!-- Meta Description -->
     <meta
       name="description"
-      content="Jestem Damian Lewandowski, frontend developer i web developer. Tworzę nowoczesne, responsywne i zoptymalizowane strony internetowe oraz aplikacje webowe."
+      content="Stworzę dla Ciebie nowoczesną, responsywną i zoptymalizowaną stronę internetową. Zadbam o SEO i doskonałą widoczność na urządzeniach mobilnych."
     />
 
-    <!-- Meta Keywords (opcjonalne, małe znaczenie teraz) -->
+    <!-- Meta Keywords -->
     <meta
       name="keywords"
       content="frontend developer, web developer, HTML, CSS, JavaScript, React, portfolio, Damian Lewandowski"
@@ -22,34 +23,33 @@
     <!-- Author -->
     <meta name="author" content="Damian Lewandowski" />
 
-    <!-- Robots (dla wyszukiwarek) -->
+    <!-- Robots -->
     <meta name="robots" content="index, follow" />
 
     <!-- Open Graph / Social Media -->
-    <meta
-      property="og:title"
-      content="Damian Lewandowski – Frontend Developer | Web Developer"
-    />
+    <meta property="og:title" content="Damian Lewandowski – tryIt" />
     <meta
       property="og:description"
-      content="Jestem Damian Lewandowski, frontend developer i web developer. Tworzę nowoczesne, responsywne i zoptymalizowane strony internetowe oraz aplikacje webowe."
+      content="Stworzę dla Ciebie nowoczesną, responsywną i zoptymalizowaną stronę internetową. Zadbam o SEO i doskonałą widoczność na urządzeniach mobilnych."
     />
-    <meta property="og:image" content="./images/profile-og.png" />
-    <!-- obrazek podglądowy w social media -->
-    <meta property="og:url" content="https://twojastrona.pl" />
+    <meta
+      property="og:image"
+      content="https://tryitdev.pl/images/profile-og.png"
+    />
+    <meta property="og:url" content="https://tryitdev.pl" />
     <meta property="og:type" content="website" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:title"
-      content="Damian Lewandowski – Frontend Developer | Web Developer"
-    />
+    <meta name="twitter:title" content="Damian Lewandowski – tryIt" />
     <meta
       name="twitter:description"
-      content="Jestem Damian Lewandowski, frontend developer i web developer. Tworzę nowoczesne, responsywne i zoptymalizowane strony internetowe oraz aplikacje webowe."
+      content="Stworzę dla Ciebie nowoczesną, responsywną i zoptymalizowaną stronę internetową. Zadbam o SEO i doskonałą widoczność na urządzeniach mobilnych."
     />
-    <meta name="twitter:image" content="./images/profile-og.png" />
+    <meta
+      name="twitter:image"
+      content="https://tryitdev.pl/images/profile-og.png"
+    />
 
     <!-- Favicon -->
     <link rel="icon" href="./images/favicon.ico" type="image/x-icon" />
@@ -63,11 +63,33 @@
     />
 
     <!-- Styles -->
-    <link rel="stylesheet" href="./styles/variables.css" />
-  </head>
 
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./styles/cookies.css" />
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Damian Lewandowski",
+        "url": "https://tryitdev.pl",
+        "sameAs": [
+          "https://github.com/dalewandowski",
+          "https://www.instagram.com/damianjestem._/",
+          "https://www.facebook.com/damian.lewandowski.568"
+        ],
+        "jobTitle": "Frontend Developer | Web Developer",
+        "description": "Stworzę dla Ciebie nowoczesną, responsywną i zoptymalizowaną stronę internetową. Zadbam o SEO i doskonałą widoczność na urządzeniach mobilnych.",
+        "email": "mailto:d.lewandowski94@onet.pl",
+        "telephone": "+48721451179",
+        "image": "https://tryiddev.pl/images/profile-og.png"
+      }
+    </script>
+  </head>
   <body>
     <!-- HEADER -->
+    <div id="falling-tags"></div>
     <header id="main-menu" class="animate-on-scroll animate-down">
       <a href="#home" class="logo">
         <h1>
@@ -80,12 +102,13 @@
           <li><a href="#home">Strona Główna</a></li>
           <li><a href="#about-container">O mnie</a></li>
           <li><a href="#skills-container">Umiejętności</a></li>
-          <!-- <li><a href="#projects-container">Projekty</a></li> -->
           <li><a href="#offer-container">Oferta</a></li>
           <li><a href="#contact-container">Kontakt</a></li>
         </ul>
       </nav>
-      <button id="hamburger"><span></span><span></span><span></span></button>
+      <button id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
     </header>
 
     <main id="main-content">
@@ -95,9 +118,10 @@
         class="short-info-container animate-on-scroll animate-fade"
       >
         <h2 id="intro-text">Cześć! Jestem <span>Damian</span></h2>
-        <span id="job-title">
-          Frontend Developer | Web Developer | Aspiring Full-Stack Developer
-        </span>
+        <span id="job-title"
+          >Frontend Developer | Web Developer | Aspiring Full-Stack
+          Developer</span
+        >
         <button id="info-btn" class="animate-on-scroll animate-up">
           <a href="#offer-container">Zobacz Ofertę &#8702;</a>
         </button>
@@ -108,7 +132,7 @@
         <img
           id="profile-picture"
           src="./images/damian-lewandowski.jpg"
-          alt="Damian Lewandowski"
+          alt="Damian Lewandowski- Frontend Developer"
         />
       </section>
 
@@ -126,8 +150,8 @@
               o <b>SEO</b>, szybkie ładowanie i przemyślany design, łącząc
               logikę z kreatywnością. Na co dzień pracuję w
               <b>HTML, CSS, JavaScript i React</b>, a w wolnym czasie rozwijam
-              swoje umiejętności w Pythonie i Node.js. Chcesz mieć stronę lub
-              aplikację, która naprawdę działa?
+              swoje umiejętności m.in w Pythonie i Node.js. Chcesz mieć stronę
+              lub aplikację, która naprawdę działa?
               <mark
                 ><b
                   >Skontaktuj się ze mną – wspólnie stworzymy coś
@@ -144,51 +168,76 @@
         <h4>Technologie z którymi pracuję</h4>
         <div id="skills">
           <article class="skills-article animate-on-scroll animate-left">
-            <img src="./images/html-5.png" alt="HTML5" />
+            <img src="./images/html-5.png" alt="Logo HTML5" loading="lazy" />
             <h6>HTML 5</h6>
           </article>
           <article class="skills-article animate-on-scroll animate-right">
-            <img src="./images/css.png" alt="CSS" />
+            <img src="./images/css.png" alt="Logo CSS" loading="lazy" />
             <h6>CSS</h6>
           </article>
           <article class="skills-article animate-on-scroll animate-left">
-            <img src="./images/java-script.png" alt="JavaScript" />
+            <img
+              src="./images/java-script.png"
+              alt="Logo JavaScript"
+              loading="lazy"
+            />
             <h6>JavaScript</h6>
           </article>
           <article class="skills-article animate-on-scroll animate-right">
-            <img src="./images/bootstrap.png" alt="Bootstrap" />
+            <img
+              src="./images/bootstrap.png"
+              alt="Logo Bootstrap"
+              loading="lazy"
+            />
             <h6>Bootstrap</h6>
           </article>
           <article class="skills-article animate-on-scroll animate-left">
-            <img src="./images/react.png" alt="ReactJS" />
+            <img src="./images/react.png" alt="Logo ReactJS" loading="lazy" />
             <h6>React JS</h6>
           </article>
         </div>
 
         <div id="skills-progress" class="animate-on-scroll animate-up">
           <h4>In Progress:</h4>
-          <div class="skill-bar">
-            <span>WordPress + WooCommerce</span>
-            <div class="progress">
-              <div class="progress-fill" style="width: 20%"></div>
+          <div class="skill-timeline">
+            <span>Node.js (Express)</span>
+            <div class="timeline">
+              <div class="step completed">Podstawy</div>
+              <div class="step completed">API</div>
+              <div class="step upcoming">Middleware</div>
+              <div class="step upcoming">Routing</div>
             </div>
           </div>
-          <div class="skill-bar">
-            <span>Python</span>
-            <div class="progress">
-              <div class="progress-fill" style="width: 40%"></div>
+          <div class="skill-timeline">
+            <span>Tailwind CSS</span>
+            <div class="timeline">
+              <div class="step completed">Podstawy</div>
+              <div class="step upcoming">Layouty</div>
+              <div class="step upcoming">Komponenty</div>
             </div>
           </div>
-          <div class="skill-bar">
-            <span>Node.js</span>
-            <div class="progress">
-              <div class="progress-fill" style="width: 50%"></div>
+          <div class="skill-timeline">
+            <span>AI Integration</span>
+            <div class="timeline">
+              <div class="step upcoming">Podstawy ML</div>
+              <div class="step upcoming">Integracja API</div>
+              <div class="step upcoming">Optymalizacja</div>
             </div>
           </div>
-          <div class="skill-bar">
+          <div class="skill-timeline">
             <span>Docker</span>
-            <div class="progress">
-              <div class="progress-fill" style="width: 15%"></div>
+            <div class="timeline">
+              <div class="step completed">Podstawy</div>
+              <div class="step in-progress">Docker Compose</div>
+              <div class="step upcoming">Deployment</div>
+            </div>
+          </div>
+          <div class="skill-timeline">
+            <span>WordPress + WooCommerce</span>
+            <div class="timeline">
+              <div class="step completed">Instalacja WP</div>
+              <div class="step in-progress">Motywy & Wtyczki</div>
+              <div class="step upcoming">Sklep online</div>
             </div>
           </div>
         </div>
@@ -206,7 +255,7 @@
             </p>
           </article>
           <article class="offer-article animate-on-scroll animate-up">
-            <h5>Edycja i poprawa wyglądu strony</h5>
+            <h5>Edycja i poprawa wyglądu istniejącej strony</h5>
             <p>
               Poprawa designu, układu i estetyki istniejących stron, dopasowanie
               do potrzeb klienta.
@@ -224,103 +273,134 @@
 
       <!-- CONTACT -->
       <section id="contact-container" class="animate-on-scroll animate-fade">
-        <h4>Kontakt</h4>
-
+        <h4>Kontakt:</h4>
         <div id="contact-main-cards">
-          <!-- Email -->
           <div class="contact-card animate-on-scroll animate-up">
             <img
-              src="./images/email-icon.png"
+              src="./images/email-icon.svg"
               alt="Email"
               class="contact-icon"
             />
             <h5>Email</h5>
-            <p><a href="mailto:damian@example.com">damian@example.com</a></p>
+            <p>
+              <a href="mailto:d.lewandowski94@onet.pl"
+                >d.lewandowski94@onet.pl</a
+              >
+            </p>
           </div>
-
-          <!-- Telefon -->
           <div
             class="contact-card animate-on-scroll animate-up contact-highlight"
           >
             <span class="badge">Najszybszy Kontakt</span>
             <img
-              src="./images/phone-icon.png"
+              src="./images/phone-icon.svg"
               alt="Telefon"
               class="contact-icon"
             />
             <h5>Telefon</h5>
             <p><a href="tel:+48721451179">+48 721 451 179</a></p>
           </div>
-
-          <!-- WhatsApp -->
           <div class="contact-card animate-on-scroll animate-up">
             <img
-              src="./images/whatsapp-icon.png"
+              src="./images/whatsapp-icon.svg"
               alt="WhatsApp"
               class="contact-icon"
             />
             <h5>WhatsApp</h5>
             <p>
-              <a href="https://wa.me/48721451179" target="_blank"
+              <a
+                href="https://wa.me/48721451179"
+                target="_blank"
+                rel="noopener noreferrer"
                 >Napisz do mnie</a
               >
             </p>
           </div>
         </div>
 
-        <!-- Media społecznościowe -->
         <div id="contact-social-links" class="animate-on-scroll animate-up">
-          <a href="https://github.com/dalewandowski" target="_blank">
-            <img
-              src="./images/github-icon.png"
+          <a
+            href="https://github.com/dalewandowski"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><img
+              src="./images/github-icon.svg"
               alt="GitHub"
               class="social-icon"
-            />
-          </a>
-          <a href="https://www.instagram.com/damianjestem._/" target="_blank">
-            <img
-              src="./images/instagram-icon.png"
+          /></a>
+          <a
+            href="https://www.instagram.com/damianjestem._/"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><img
+              src="./images/instagram-icon.svg"
               alt="Instagram"
               class="social-icon"
-            />
-          </a>
+          /></a>
           <a
             href="https://www.facebook.com/damian.lewandowski.568"
             target="_blank"
-          >
-            <img
-              src="./images/facebook-icon.png"
+            rel="noopener noreferrer"
+            ><img
+              src="./images/facebook-icon.svg"
               alt="Facebook"
               class="social-icon"
-            />
-          </a>
+          /></a>
         </div>
       </section>
 
-      <!-- PROJEKTY (pusta sekcja, jeśli kiedyś chcesz dodać) -->
+      <!-- PROJEKTY -->
       <section
         id="projects-container"
         class="animate-on-scroll animate-fade"
       ></section>
     </main>
+    <aside>
+      <div id="cookie-banner">
+        <p>
+          Używamy plików cookie, aby poprawić komfort przeglądania, wyświetlać
+          spersonalizowane reklamy lub treści oraz analizować nasz ruch.
+          Klikając „Akceptuję”, wyrażasz zgodę na używanie przez nas plików
+          cookie.
+          <a href="./privacy-policy.html">Polityka Prywatności</a>
+        </p>
+        <div>
+          <button id="accept-cookies">Akceptuję</button>
+          <button id="reject-cookies">Odrzucam</button>
+        </div>
+      </div>
+    </aside>
 
     <!-- FOOTER -->
     <footer id="footer">
       <div class="footer-content">
-        <p>&copy; 2025 Damian Lewandowski. Wszelkie prawa zastrzeżone.</p>
+        <p>
+          &copy; 2025 Damian Lewandowski. Wszelkie prawa zastrzeżone.
+          <a href="./privacy-policy.html">[Polityka Prywatności]</a>
+        </p>
         <div class="social-links">
-          <a href="https://github.com/dalewandowski" target="_blank">GitHub</a>
-          <a href="https://www.instagram.com/damianjestem._/" target="_blank"
-            >LinkedIn</a
+          <a
+            href="https://github.com/dalewandowski"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub</a
+          >
+          <a
+            href="https://www.instagram.com/damianjestem._/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Instagram</a
           >
           <a
             href="https://www.facebook.com/damian.lewandowski.568"
             target="_blank"
+            rel="noopener noreferrer"
             >Facebook</a
           >
         </div>
       </div>
     </footer>
+
     <script src="./scripts/script.js"></script>
   </body>
 </html>

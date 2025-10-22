@@ -1,71 +1,145 @@
-// Hamburger menu
-const hamburger = document.getElementById("hamburger");
-const menu = document.querySelector("nav ul");
+(() => {
+  // ==========================
+  //  HAMBURGER MENU
+  // ==========================
+  const hamburger = document.getElementById("hamburger");
+  const menu = document.querySelector("nav ul");
 
-hamburger.addEventListener("click", () => {
-  menu.classList.toggle("show");
-  hamburger.classList.toggle("active");
-});
-
-// Smooth scroll z uwzględnieniem fixed header
-const links = document.querySelectorAll('a[href^="#"]');
-
-links.forEach((link) => {
-  link.addEventListener("click", function (e) {
-    e.preventDefault();
-
-    const targetId = this.getAttribute("href").substring(1);
-    const targetElement = document.getElementById(targetId);
-    if (!targetElement) return;
-
-    // dynamiczna wysokość header
-    const headerHeight = document.getElementById("main-menu").offsetHeight;
-
-    // pozycja docelowa
-    const targetPosition = targetElement.offsetTop - headerHeight;
-
-    window.scrollTo({
-      top: targetPosition >= 0 ? targetPosition : 0,
-      behavior: "smooth",
-    });
-
-    // zamknięcie menu mobilnego
-    if (menu.classList.contains("show")) {
-      menu.classList.remove("show");
-      hamburger.classList.remove("active");
-    }
+  hamburger.addEventListener("click", () => {
+    menu.classList.toggle("show");
+    hamburger.classList.toggle("active");
   });
-});
-// Czekamy aż strona się załaduje
-document.addEventListener("DOMContentLoaded", () => {
-  const animatedElements = document.querySelectorAll(".animate-on-scroll");
 
-  // Funkcja sprawdzająca, czy element jest widoczny w oknie
-  function isInViewport(el) {
-    const rect = el.getBoundingClientRect();
-    return (
-      rect.top <=
-        (window.innerHeight || document.documentElement.clientHeight) &&
-      rect.bottom >= 0
-    );
-  }
+  // ==========================
+  //  SMOOTH SCROLL (z uwzględnieniem headera)
+  // ==========================
+  const links = document.querySelectorAll('a[href^="#"]');
 
-  // Funkcja dodająca klasę 'animate' z opóźnieniem
-  function animateElements() {
-    animatedElements.forEach((el, index) => {
-      if (isInViewport(el) && !el.classList.contains("animate")) {
-        // Dodajemy opóźnienie dla elementów w tej samej sekcji
-        const delay = el.dataset.delay || index * 50; // 150ms między elementami
-        setTimeout(() => {
-          el.classList.add("animate");
-        }, delay);
+  links.forEach((link) => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      const targetId = this.getAttribute("href").substring(1);
+      const targetElement = document.getElementById(targetId);
+      if (!targetElement) return;
+
+      const headerHeight = document.getElementById("main-menu").offsetHeight;
+      const targetPosition = targetElement.offsetTop - headerHeight;
+
+      window.scrollTo({
+        top: targetPosition >= 0 ? targetPosition : 0,
+        behavior: "smooth",
+      });
+
+      // Zamknij menu mobilne po kliknięciu
+      if (menu.classList.contains("show")) {
+        menu.classList.remove("show");
+        hamburger.classList.remove("active");
       }
     });
+  });
+
+  // ==========================
+  //  ANIMACJE PRZY SCROLLOWANIU
+  // ==========================
+  document.addEventListener("DOMContentLoaded", () => {
+    const animatedElements = document.querySelectorAll(".animate-on-scroll");
+
+    const isInViewport = (el) => {
+      const rect = el.getBoundingClientRect();
+      return (
+        rect.top <=
+          (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.bottom >= 0
+      );
+    };
+
+    function animateElements() {
+      animatedElements.forEach((el, index) => {
+        if (isInViewport(el) && !el.classList.contains("animate")) {
+          const delay = el.dataset.delay || index * 50;
+          setTimeout(() => {
+            el.classList.add("animate");
+          }, delay);
+        }
+      });
+    }
+
+    // Pierwsze uruchomienie
+    animateElements();
+
+    // Debounce scrolla – optymalizacja wydajności
+    let scrollTimeout;
+    window.addEventListener("scroll", () => {
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(animateElements, 100);
+    });
+  });
+
+  // ==========================
+  //  FALLING TAGS (spadające znaczniki HTML)
+  // ==========================
+  const tags = [
+    "<div>",
+    "<p>",
+    "<h1>",
+    "<span>",
+    "<a>",
+    "<section>",
+    "<footer>",
+    "<header>",
+    "const",
+    "let",
+    "function",
+    "try",
+    "catch",
+  ];
+
+  const container = document.getElementById("falling-tags");
+  const maxTags = 6; // maksymalna liczba tagów jednocześnie
+
+  function createFallingTag() {
+    const currentTags = document.querySelectorAll(".falling-tag").length;
+    if (currentTags >= maxTags) return; // nie tworzymy więcej niż maxTags
+
+    const tag = document.createElement("div");
+    tag.classList.add("falling-tag");
+    tag.textContent = tags[Math.floor(Math.random() * tags.length)];
+
+    tag.style.left = Math.random() * 100 + "vw";
+    tag.style.animationDuration = 3 + Math.random() * 5 + "s";
+
+    container.appendChild(tag);
+
+    // Usuwamy po zakończeniu animacji
+    setTimeout(() => tag.remove(), 10000);
   }
 
-  // Wstępne odpalenie przy załadowaniu strony
-  animateElements();
+  // Spadające znaczniki — rzadziej, żeby było subtelnie
+  setInterval(createFallingTag, 2000);
+})();
 
-  // Odpalenie przy scrollowaniu
-  window.addEventListener("scroll", animateElements);
+// cookie
+
+document.addEventListener("DOMContentLoaded", function () {
+  const banner = document.getElementById("cookie-banner");
+  const acceptBtn = document.getElementById("accept-cookies");
+  const rejectBtn = document.getElementById("reject-cookies");
+
+  // Jeśli decyzja już była podjęta, ukryj pasek
+  if (localStorage.getItem("cookiesDecision")) {
+    banner.style.display = "none";
+  }
+
+  // Akceptacja cookies
+  acceptBtn.addEventListener("click", function () {
+    localStorage.setItem("cookiesDecision", "accepted");
+    banner.style.display = "none";
+  });
+
+  // Odrzucenie cookies
+  rejectBtn.addEventListener("click", function () {
+    localStorage.setItem("cookiesDecision", "rejected");
+    banner.style.display = "none";
+  });
 });
