@@ -126,20 +126,29 @@ document.addEventListener("DOMContentLoaded", function () {
   const acceptBtn = document.getElementById("accept-cookies");
   const rejectBtn = document.getElementById("reject-cookies");
 
-  // Jeśli decyzja już była podjęta, ukryj pasek
-  if (localStorage.getItem("cookiesDecision")) {
+  // Jeśli użytkownik zaakceptował cookies wcześniej, ukryj pasek
+  if (localStorage.getItem("cookiesDecision") === "accepted") {
     banner.style.display = "none";
+    enableCookies();
   }
 
-  // Akceptacja cookies
   acceptBtn.addEventListener("click", function () {
     localStorage.setItem("cookiesDecision", "accepted");
     banner.style.display = "none";
+    enableCookies();
   });
 
-  // Odrzucenie cookies
   rejectBtn.addEventListener("click", function () {
-    localStorage.setItem("cookiesDecision", "rejected");
+    // Odrzucenie = nic nie zapisujemy, pasek chowa się
     banner.style.display = "none";
+    console.log("Użytkownik odrzucił cookies. Żadne dane nie są zapisywane.");
   });
+
+  function enableCookies() {
+    console.log(
+      "Cookies zaakceptowane. Tutaj można uruchomić analitykę lub inne funkcje."
+    );
+    // Przykład: włączenie Google Analytics po akceptacji
+    // gtag('consent', 'update', { 'analytics_storage': 'granted' });
+  }
 });
