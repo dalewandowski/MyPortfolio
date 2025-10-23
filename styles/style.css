@@ -310,6 +310,39 @@ nav a:hover {
   font-size: 1.4rem;
 }
 
+#contact-button {
+  display: block;
+  margin: 3rem auto;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 2px 2px 15px var(--color-muted);
+  background: linear-gradient(135deg, var(--color-red), var(--color-accent));
+  padding: 0.8rem 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 250px;
+  color: white;
+  font-size: 1.2rem;
+  animation: pulse 2s ease-in infinite;
+}
+
+#contact-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 170, 255, 0.5);
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 /* ==========================
    SKILLS SECTION
 ========================== */
@@ -734,3 +767,5 @@ body.visible {
     margin: 3rem 1rem;
   }
 }
+
+@media;
