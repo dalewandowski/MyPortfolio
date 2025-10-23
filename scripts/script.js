@@ -96,7 +96,7 @@
   ];
 
   const container = document.getElementById("falling-tags");
-  const maxTags = 6; // maksymalna liczba tagów jednocześnie
+  const maxTags = 10;
 
   function createFallingTag() {
     const currentTags = document.querySelectorAll(".falling-tag").length;
@@ -107,7 +107,7 @@
     tag.textContent = tags[Math.floor(Math.random() * tags.length)];
 
     tag.style.left = Math.random() * 100 + "vw";
-    tag.style.animationDuration = 3 + Math.random() * 5 + "s";
+    tag.style.animationDuration = 6 + Math.random() * 15 + "s";
 
     container.appendChild(tag);
 
@@ -116,7 +116,7 @@
   }
 
   // Spadające znaczniki — rzadziej, żeby było subtelnie
-  setInterval(createFallingTag, 2000);
+  setInterval(createFallingTag, 1000);
 })();
 
 // cookie
@@ -148,7 +148,7 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log(
       "Cookies zaakceptowane. Tutaj można uruchomić analitykę lub inne funkcje."
     );
-    // Przykład: włączenie Google Analytics po akceptacji
+    //  Google analitycs, jesli zostanie dodane
     // gtag('consent', 'update', { 'analytics_storage': 'granted' });
   }
 });
