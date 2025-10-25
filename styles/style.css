@@ -7,6 +7,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  border: 2px solid black;
 }
 
 html {
@@ -18,12 +19,6 @@ body {
   font-family: var(--font-main);
   background-color: var(--color-bg);
   color: #222;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
 }
 
 section {
@@ -73,7 +68,6 @@ FALLING TAGS
   top: 0;
   left: 0;
   width: 100%;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
